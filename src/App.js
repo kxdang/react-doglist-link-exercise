@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
 import DogDetails from "./DogDetails";
+import Navbar from "./Navbar";
 import DogList from "./DogList";
 
 import "./App.css";
@@ -34,7 +35,7 @@ class App extends Component {
         name: "Tubby",
         age: 4,
         src:
-          "https://images.unsplash.com/photo-1453227588063-bb302b62f50b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+          "https://images.unsplash.com/photo-1504826260979-242151ee45b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
         facts: [
           "Tubby is not the brightest dog",
           "Tubby does not like walks or exercise.",
@@ -55,11 +56,7 @@ class App extends Component {
     };
     return (
       <div>
-        <nav>
-          {this.props.dogs.map(dog => (
-            <NavLink to={`/dogs/${dog.name}`}>{dog.name}</NavLink>
-          ))}
-        </nav>
+        <Navbar dogs={this.props.dogs} />
         <Switch>
           <Route
             exact
